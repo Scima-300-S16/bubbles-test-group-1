@@ -1,3 +1,5 @@
+// this code utilizes ben fry's bubbles on a map code 
+//and a circles object to create animated circles
 //introduce variables and objects
 PImage worldmap;
 Table locationTable; //this is using the Table object
