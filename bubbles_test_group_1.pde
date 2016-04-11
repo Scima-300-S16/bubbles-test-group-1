@@ -1,6 +1,7 @@
 // this code utilizes ben fry's bubbles on a map code 
 //and a circles object to create animated circles
 //introduce variables and objects
+
 PImage worldmap;
 Table locationTable; //this is using the Table object
 Table dataTable; //this is using the Table object
@@ -64,10 +65,13 @@ void draw() {
     //get the 2nd and 3rd fields and assign them to
     float x = locationTable.getFloat(id, 1);
     float y = locationTable.getFloat(id, 2);
+    radius = dataTable.getFloat(id,1);
+    
+    float newRadius = map(radius, 0,25, 50,300);
     //use the drawData function (written below) to position and visualize
     drawData(x, y, id);
 
-    myCircles[row].grow(int(radius));
+    myCircles[row].grow(int(newRadius));
     myCircles[row].display(x, y, newR, newG, newB);
 
 
@@ -76,13 +80,13 @@ void draw() {
       newR = 163;
       newG = 255;
       newB = 162;
-      radius=115;
+      
       break;
     case 1: //Italy Green Medium
       newR = 0;
       newG = 255;
       newB = 0;
-      radius=25;
+      
       break; 
     case 2: //France Dark Green
       newR = 4;
@@ -94,19 +98,19 @@ void draw() {
       newR = 0;
       newG = 0;
       newB = 255;
-      radius=5;
+      
       break;
     case 4:  //Brasil Blue
       newR = 0;
       newG = 0;
       newB = 255;
-      radius=5;
+      
       break;
     case 5:    //Norway Red
       newR = 255;
       newG = 0;
       newB = 0;
-      radius = 5;
+      
       break;
     }
   }
