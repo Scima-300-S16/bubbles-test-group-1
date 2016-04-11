@@ -67,6 +67,10 @@ void draw() {
     float y = locationTable.getFloat(id, 2);
     radius = dataTable.getFloat(id,1);
     
+     newR = int(map(int(id), 0, 5, 0,255));
+     newG = int(map(x, 0, 350, 0,255));
+     newB = int(map(y, 0, 350, 0,255));
+    
     float newRadius = map(radius, 0,25, 50,300);
     //use the drawData function (written below) to position and visualize
     drawData(x, y, id);
@@ -75,44 +79,7 @@ void draw() {
     myCircles[row].display(x, y, newR, newG, newB);
 
 
-    switch(row) {
-    case 0:  //San Francisco Green
-      newR = 163;
-      newG = 255;
-      newB = 162;
-      
-      break;
-    case 1: //Italy Green Medium
-      newR = 0;
-      newG = 255;
-      newB = 0;
-      
-      break; 
-    case 2: //France Dark Green
-      newR = 4;
-      newG = 173;
-      newB = 2;
-      radius=10;
-      break;
-    case 3://NY Blue
-      newR = 0;
-      newG = 0;
-      newB = 255;
-      
-      break;
-    case 4:  //Brasil Blue
-      newR = 0;
-      newG = 0;
-      newB = 255;
-      
-      break;
-    case 5:    //Norway Red
-      newR = 255;
-      newG = 0;
-      newB = 0;
-      
-      break;
-    }
+
   }
 
   //myCircles[0].grow();
