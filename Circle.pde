@@ -4,24 +4,14 @@ class Circle {
   int r, g, b;
   float diameter = 1;
   boolean on = false;
-  int volume;
+  int size;
 
-
-
-  //void begin(){
-  //  x = xpos;
-  //  y = ypos;
-  //  on = true;
-  //  diameter = 1;
-  //}
-
-
-  void grow(int v) { 
-    volume=v;
+  void grow(int s) { 
+    size=s;
     diameter+=0.5;
     // you might mess with this number a bit to get the right size, 
     //or you might pass in a variable to determine how wide it gets.
-    if (diameter > v) {
+    if (diameter > s) {
       diameter = 0.3;
     }
   }
